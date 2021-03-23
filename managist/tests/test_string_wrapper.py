@@ -25,8 +25,8 @@ class StringWrapperTests(TestCase):
             'a' * WRAP_THRESHOLD
         )
         self.assertEqual(
-            self.long_wrapper.wrap('a' * (WRAP_THRESHOLD - 1)),
-            'a' * (WRAP_THRESHOLD - 1) + '\na' 
+            self.long_wrapper.wrap('a' * (WRAP_THRESHOLD + 1)),
+            'a' * (WRAP_THRESHOLD) + '\na' 
         )
     
     def test_wrapping_short_strings(self) -> None:
