@@ -1,13 +1,17 @@
 from typing import Optional
 
+from github.MainClass import Github
+
 from managist.string_wrapper import StringWrapper
 
 
 class Gist:
     def __init__(self,
+                 github: Github,
                  title: str,
-                 content: Optional[str],
-                 wrapper: Optional[StringWrapper]) -> None:
+                 content: Optional[str]=None,
+                 wrapper: Optional[StringWrapper]=None) -> None:
+        self.github = github
         self.title = title
 
         if wrapper:
