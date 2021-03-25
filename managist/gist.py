@@ -12,6 +12,10 @@ class Gist:
                  title: str,
                  content: str,
                  wrapper: Optional[StringWrapper]=None) -> None:
+        """
+        Creates a new Gist. This constructor 
+        is supposed to be used by the `Managist.create_gist` method.
+        """
         self.github = github
         self.title = title
         self.github_gist = None
@@ -22,6 +26,10 @@ class Gist:
             self.content = content
 
     def save(self, public: bool=False) -> None:
+        """
+        Saves gist's content. If the gist is not present on GH's servers,
+        then creates one.
+        """
         file_dict = {'gist': InputFileContent(self.content, self.title)}
         user = self.github.get_user()
 

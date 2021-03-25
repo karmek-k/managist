@@ -3,12 +3,20 @@ WRAP_THRESHOLD = 59
 
 class StringWrapper:
     def __init__(self, threshold: int=WRAP_THRESHOLD) -> None:
+        """
+        Creates a `StringWrapper` with given `threshold`.
+        `threshold` must be a positive integer.
+        """
         if threshold <= 0:
             raise ValueError('Wrapper threshold must be a positive integer')
 
         self.threshold = threshold
 
     def wrap(self, string: str) -> str:
+        """
+        Inserts newlines in a way that
+        each line of `string` is at most `self.threshold` characters long.
+        """
         result = []
         
         for i, char in enumerate(string):
