@@ -1,5 +1,3 @@
-from typing import Optional
-
 from github import Github
 
 from managist.gist import Gist
@@ -15,9 +13,9 @@ class Managist:
     
     def create_gist(self,
                     title: str,
-                    content: Optional[str]=None,
+                    content: str,
                     wrap: bool=False,
-                    wrap_threshold: int=WRAP_THRESHOLD):
+                    wrap_threshold: int=WRAP_THRESHOLD) -> Gist:
         wrapper = StringWrapper(wrap_threshold) if wrap else None
 
         return Gist(self.github, title, content, wrapper)
