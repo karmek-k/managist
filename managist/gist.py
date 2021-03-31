@@ -7,6 +7,13 @@ from managist.string_wrapper import StringWrapper
 
 
 class Gist:
+    """
+    A class representing individual gists on GitHub servers.
+
+    You probably won't have to touch this class,
+    as a `Managist` object has factory methods
+    that can create gists for you.
+    """
     def __init__(self,
                  github: Github,
                  title: str,

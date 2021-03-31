@@ -2,6 +2,10 @@ WRAP_THRESHOLD = 59
 
 
 class StringWrapper:
+    """
+    A service class for wrapping lines when
+    a certain number of characters (threshold) is met in a single line.
+    """
     def __init__(self, threshold: int=WRAP_THRESHOLD) -> None:
         """
         Creates a `StringWrapper` with given `threshold`.
